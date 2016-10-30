@@ -1,4 +1,4 @@
-package biz.spsolutions.edgevantage.ext.config;
+package com.incosyz.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"biz.spsolutions.edgevantage.ext"})
+@ComponentScan({"com.incosyz"})
 @PropertySource(value = {"classpath:application.properties"})
 public class HibernateConfiguration {
 
@@ -28,7 +28,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan("biz.spsolutions.edgevantage.ext.entity");
+        sessionFactory.setPackagesToScan("com.incosyz.entity");
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
