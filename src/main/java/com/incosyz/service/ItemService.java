@@ -7,4 +7,5 @@ import com.incosyz.entity.Item;
  */
 public interface ItemService {
     public void add(Item item);
+
 }

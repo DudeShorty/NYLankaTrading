@@ -12,6 +12,12 @@
     <script src="lib/js/main.min.js"></script>
     <!-- Custom Scripts -->
     <script type="text/javascript" src="js/dashboard.min.js"></script>
+
+    <style>
+        body{
+            font-family: Calibri;
+        }
+    </style>
 </head>
 <body ng-controller="MasterCtrl">
 <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
