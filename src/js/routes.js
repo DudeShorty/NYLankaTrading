@@ -20,7 +20,7 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('item', {
                 url: '/item',
-                templateUrl: 'templates/items.html'
+                templateUrl: 'templates/master/items.html'
             });
     }
 ]);
