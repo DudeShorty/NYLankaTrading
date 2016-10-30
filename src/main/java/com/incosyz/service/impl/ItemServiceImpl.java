@@ -23,6 +23,7 @@ public class ItemServiceImpl implements ItemService {
     public void add(ItemDTO itemDTO) {
         Item item = new Item();
         item.setItemName(itemDTO.getName());
+        item.setActive(true);
         abstractDao.save(item);
     }
 

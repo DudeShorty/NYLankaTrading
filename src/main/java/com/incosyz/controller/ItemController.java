@@ -35,11 +35,10 @@ public class ItemController {
     public void deactive(){
 
     }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody ItemDTO itemDTO) {
-        Item item = new Item();
-        item.setItemName("A");
         itemService.add(itemDTO);
     }
 }
