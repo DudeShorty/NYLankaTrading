@@ -1,5 +1,6 @@
 package com.incosyz.service;
 
+import com.incosyz.dao.AbstractDao;
 import com.incosyz.dao.ItemDao;
 import com.incosyz.entity.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,11 @@ import org.springframework.stereotype.Service;
 public class ItemServiceImpl implements ItemService {
     @Autowired
     private ItemDao itemDao;
+    @Autowired
+    private AbstractDao abstractDao;
 
     @Override
     public void add(Item item) {
-        itemDao.add(item);
+        abstractDao.save(item);
     }
 }

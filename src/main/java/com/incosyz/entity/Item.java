@@ -1,5 +1,7 @@
 package com.incosyz.entity;
 
+import com.incosyz.dto.BaseModel;
+
 import javax.persistence.*;
 
 /**
@@ -7,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "MASTER_ITEM")
-public class Item {
+public class Item extends BaseModel {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
