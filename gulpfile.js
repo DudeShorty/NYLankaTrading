@@ -15,7 +15,7 @@ var paths = {
     styles: 'src/less/**/*.*',
     images: 'src/img/**/*.*',
     templates: 'src/templates/**/*.html',
-    //index: 'src/index.html',
+    index: 'src/index.html',
     bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
 };
 
@@ -63,16 +63,17 @@ gulp.task('custom-js', function() {
 
 gulp.task('custom-less', function() {
     return gulp.src(paths.styles)
-        .pipe(less())
+        .pipe(minifyCss())
+        .pipe(concat('style.min.css'))
         .pipe(gulp.dest('src/main/webapp/WEB-INF/theme/css'));
 });
-/**
+
 gulp.task('custom-templates', function() {
     return gulp.src(paths.templates)
         .pipe(minifyHTML())
         .pipe(gulp.dest('src/main/webapp/WEB-INF/theme/templates'));
 });
-*/
+
 /**
  * Watch custom files
  */

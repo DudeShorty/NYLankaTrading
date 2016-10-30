@@ -7,6 +7,7 @@
     <title>RDash AngularJS</title>
     <!-- STYLES -->
     <link rel="stylesheet" href="lib/css/main.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
     <!-- SCRIPTS -->
     <script src="lib/js/main.min.js"></script>
     <!-- Custom Scripts -->

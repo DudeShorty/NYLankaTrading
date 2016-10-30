@@ -9,7 +9,6 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
         // For unmatched routes
         $urlRouterProvider.otherwise('/');
 
-        // Application routes
         $stateProvider
             .state('index', {
                 url: '/',
@@ -18,6 +17,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('tables', {
                 url: '/tables',
                 templateUrl: 'templates/tables.html'
+            })
+            .state('item', {
+                url: '/item',
+                templateUrl: 'templates/item.html'
             });
     }
 ]);

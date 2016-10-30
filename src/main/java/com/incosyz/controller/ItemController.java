@@ -21,11 +21,11 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
 
-    @RequestMapping(value = "/item", method = RequestMethod.GET)
-    @ResponseBody
-    public void add(ModelMap model) {
-        Item item = new Item();
-        item.setItemName("A");
-        itemService.add(item);
-    }
+//    @RequestMapping(value = "/item", method = RequestMethod.GET)
+//    @ResponseBody
+//    public void add(ModelMap model) {
+//        Item item = new Item();
+//        item.setItemName("A");
+//        itemService.add(item);
+//    }
 }

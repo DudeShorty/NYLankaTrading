@@ -1,6 +1,48 @@
 
 .body-div {
-    font-family: SansSerif;
+    font-family: Calibri;
     width: 100%;
-    padding: 10px;
+    padding: 0px 10px;
+}
+
+.body-inner-div{
+    width: 100%;
+    background-color: white;
+    height: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 1px 1px gainsboro;
+    margin-top: 15px;
+}
+
+.text-box{
+    margin-left: 10px;
+    border: 1px solid gainsboro;
+    width: 250px;
+    height: 20px;
+}
+
+.btn-box{
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    margin-left: 10px;
+    padding: 0px 20px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+    display: inline-block;
+    height: 20px;
+    /*font-size: 16px;*/
+    /*margin-top: 5px;*/
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100px;
+}
+
+.btn-red{
+    background-color: #d9534f;
+}
+
+.btn-green{
+    background-color: mediumseagreen;
 }
