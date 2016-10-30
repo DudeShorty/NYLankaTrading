@@ -29,4 +29,16 @@ public class ItemController {
         item.setItemName("A");
         itemService.add(item);
     }
+
+    @RequestMapping(value = "/active", method = RequestMethod.GET)
+    @ResponseBody
+    public void active(){
+
+    }
+
+    @RequestMapping(value = "/deactive", method = RequestMethod.GET)
+    @ResponseBody
+    public void deactive(){
+
+    }
 }
