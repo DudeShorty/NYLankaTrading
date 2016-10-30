@@ -18,6 +18,17 @@ public class Item extends BaseModel {
     @Column(name = "ITEM_NAME")
     private String itemName;
 
+    @Column(name = "ACTIVE")
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
     public Long getId() {
         return Id;
     }
