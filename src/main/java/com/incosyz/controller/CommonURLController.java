@@ -23,4 +23,9 @@ public class CommonURLController {
 		return "item";
 	}
 
+	@RequestMapping(value = "/brand", method = RequestMethod.GET)
+	public String brand() {
+		return "brand";
+	}
+
 }

@@ -4,7 +4,7 @@
  * Route configuration for the RDash module.
  */
 angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+    function ($stateProvider, $urlRouterProvider) {
 
         // For unmatched routes
         $urlRouterProvider.otherwise('/');
@@ -21,6 +21,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('item', {
                 url: '/item',
                 templateUrl: 'templates/master/items.html'
+            })
+            .state('brand', {
+                url: '/brand',
+                templateUrl: 'templates/master/brand.html'
             });
     }
 ]);
