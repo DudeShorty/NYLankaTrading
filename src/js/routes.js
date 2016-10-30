@@ -25,6 +25,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('brand', {
                 url: '/brand',
                 templateUrl: 'templates/master/brand.html'
+            })
+            .state('model', {
+                url: '/model',
+                templateUrl: 'templates/master/model.html'
             });
     }
 ]);

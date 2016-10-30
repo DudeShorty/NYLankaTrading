@@ -5,7 +5,7 @@
     padding: 0px 10px;
 }
 
-.body-inner-div{
+.body-inner-div {
     width: 100%;
     background-color: white;
     height: auto;
@@ -14,14 +14,15 @@
     margin-top: 15px;
 }
 
-.text-box{
+.text-box {
+    margin-bottom: 5px;
     margin-left: 10px;
     border: 1px solid gainsboro;
     width: 250px;
     height: 20px;
 }
 
-.btn-box{
+.btn-box {
     background-color: #008CBA; /* Green */
     border: none;
     color: white;
@@ -38,14 +39,15 @@
     border-radius: 3px;
     width: 100px;
 }
-table tr:first-child td{
+
+table tr:first-child td {
     border-top: none;
 }
 
-.btn-red{
+.btn-red {
     background-color: #d9534f;
 }
 
-.btn-green{
+.btn-green {
     background-color: mediumseagreen;
 }

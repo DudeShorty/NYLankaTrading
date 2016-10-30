@@ -1,6 +1,7 @@
 package com.incosyz.dao;
 
 import com.incosyz.entity.Item;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -23,8 +24,9 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     @Override
-    public void add(Item item) {
+    public void active(Item item) {
         Session em = getSession();
-        em.save(item);
+        Query query = em.createQuery("UPDATE Item o SET o.active = true WHERE o.id = :id ");
+
     }
 }
