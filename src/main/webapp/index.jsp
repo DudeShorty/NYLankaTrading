@@ -35,24 +35,27 @@
             <li class="sidebar-list">
                 <a href="#/item">Items <span class="menu-icon fa fa-table"></span></a>
             </li>
+            <li class="sidebar-list">
+                <a href="#/brand">Brand <span class="menu-icon fa fa-table"></span></a>
+            </li>
         </ul>
-        <div class="sidebar-footer">
-            <div class="col-xs-4">
-                <a href="https://github.com/rdash/rdash-angular" target="_blank">
-                    Github
-                </a>
-            </div>
-            <div class="col-xs-4">
-                <a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">
-                    About
-                </a>
-            </div>
-            <div class="col-xs-4">
-                <a href="#">
-                    Support
-                </a>
-            </div>
-        </div>
+        <%--<div class="sidebar-footer">--%>
+            <%--<div class="col-xs-4">--%>
+                <%--<a href="https://github.com/rdash/rdash-angular" target="_blank">--%>
+                    <%--Github--%>
+                <%--</a>--%>
+            <%--</div>--%>
+            <%--<div class="col-xs-4">--%>
+                <%--<a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">--%>
+                    <%--About--%>
+                <%--</a>--%>
+            <%--</div>--%>
+            <%--<div class="col-xs-4">--%>
+                <%--<a href="#">--%>
+                    <%--Support--%>
+                <%--</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
     </div>
     <!-- End Sidebar -->
 
