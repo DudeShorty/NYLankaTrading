@@ -1,9 +1,4 @@
-<html>
-<head>
-    <title>Brand</title>
-</head>
-<body>
-<div class="body-div">
+<div class="body-div" ng-controller="BrandCtrl as brandctrl">
     <div class="body-inner-div">
         <table>
             <tr>
@@ -11,10 +6,10 @@
                     Brand Name :
                 </td>
                 <td>
-                    <input class="text-box">
+                    <input class="text-box" ng-model="brandDTO.name">
                 </td>
                 <td>
-                    <input type="button" value="ADD" class="btn-box">
+                    <input type="button" value="ADD" class="btn-box" ng-click="addBrand()">
                 </td>
             </tr>
         </table>
@@ -24,74 +19,19 @@
             <!--<rd-widget-body classes="medium no-padding">-->
             <div class="table-responsive">
                 <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
                     <tbody>
                     <tr>
-                        <td>1</td>
                         <td>FRONT DOOR E1236s</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>SIDE MIRROR 2000E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>ENGINE 325134354832E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="ACTIVATE" class="btn-box btn-green">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                        <!--/-->
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
                         <td>
                             <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
@@ -115,5 +55,3 @@
         </rd-widget>
     </div>
 </div>
-</body>
-</html>
