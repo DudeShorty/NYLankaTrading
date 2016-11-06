@@ -48,4 +48,5 @@ Icon
 /src/components
 
 # JetBrains
-.idea
+.idea/
+target/

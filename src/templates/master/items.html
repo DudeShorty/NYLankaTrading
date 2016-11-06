@@ -1,22 +1,19 @@
-<html>
-<head>
-    <title>Item</title>
-</head>
-<body>
-<div class="body-div">
+<div class="body-div" ng-controller="ItemCtrl as itemctrl">
     <div class="body-inner-div">
         <table>
-            <tr>
-                <td>
-                    Item Name :
-                </td>
-                <td>
-                    <input class="text-box">
-                </td>
-                <td>
-                    <input type="button" value="ADD" class="btn-box">
-                </td>
-            </tr>
+            <form>
+                <tr>
+                    <td>
+                        Item Name :
+                    </td>
+                    <td>
+                        <input class="text-box" ng-model="itemDTO.name"/>
+                    </td>
+                    <td>
+                        <input type="button" value="ADD" class="btn-box" ng-click="addItem()"/>
+                    </td>
+                </tr>
+            </form>
         </table>
     </div>
     <div class="body-inner-div">
@@ -115,5 +112,3 @@
         </rd-widget>
     </div>
 </div>
-</body>
-</html>

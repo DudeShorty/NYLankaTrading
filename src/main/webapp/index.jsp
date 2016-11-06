@@ -19,7 +19,7 @@
         }
     </style>
 </head>
-<body ng-controller="MasterCtrl">
+<body ng-app="RDash" ng-controller="MasterCtrl as masterctrl">
 <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <!-- Sidebar -->

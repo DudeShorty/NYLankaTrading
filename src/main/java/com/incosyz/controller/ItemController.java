@@ -39,6 +39,7 @@ public class ItemController {
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
     public void add(@RequestBody ItemDTO itemDTO) {
+        logger.info("addItem");
         itemService.add(itemDTO);
     }
 }
