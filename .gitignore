@@ -48,5 +48,6 @@ Icon
 /src/components
 
 # JetBrains
-/.idea/
+.idea/
 /NYLankaTrading.iml
+target/
