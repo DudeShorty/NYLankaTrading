@@ -10,6 +10,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Stelan Briyan on 10/30/2016.
  */
@@ -29,5 +33,18 @@ public class ItemDaoImpl implements ItemDao {
         Session em = getSession();
         Query query = em.createQuery("UPDATE Item o SET o.active = true WHERE o.id = :id ");
 
+    }
+
+    @Override
+    public List<Item> getItem() {
+        List<Item> items = new ArrayList<>();
+        try {
+            Session em = getSession();
+            Query query = em.createQuery("SELECT o FROM Item o");
+            items = (List<Item>) query.list();
+        }catch (NoResultException e){
+
+        }
+        return items;
     }
 }

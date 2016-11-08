@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 /**
  * Created by Stelan Briyan on 10/30/2016.
  */
@@ -25,6 +27,11 @@ public class ItemServiceImpl implements ItemService {
         item.setItemName(itemDTO.getName());
         item.setActive(true);
         abstractDao.save(item);
+    }
+
+    @Override
+    public List<Item> get() {
+        return itemDao.getItem();
     }
 
     private ItemDTO generateItemDTO(Item item) {

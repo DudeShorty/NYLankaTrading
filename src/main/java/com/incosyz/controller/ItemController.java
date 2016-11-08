@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 /**
  * Created by Stelan Briyan on 10/30/2016.
  */
@@ -41,5 +43,9 @@ public class ItemController {
     public void add(@RequestBody ItemDTO itemDTO) {
         logger.info("addItem");
         itemService.add(itemDTO);
+    }
+
+    public void get(){
+       List<Item> list= itemService.get();
     }
 }
