@@ -29,6 +29,9 @@ public class Tank extends BaseModel {
     @Column(name = "STATUS")
     private String status;
 
+    @Column(name = "ACTIVE")
+    private boolean active;
+
     public Long getId() {
         return Id;
     }
@@ -67,5 +70,13 @@ public class Tank extends BaseModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }
