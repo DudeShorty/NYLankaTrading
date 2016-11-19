@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.NoResultException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,5 +52,21 @@ public class TankDaoImpl implements TankDao {
 
         }
         return list;
+    }
+
+
+    public Tank getTanks(Long id) {
+        List<Tank> tanks = new ArrayList<>();
+        try {
+            Session em = getSession();
+            Query query = em.createQuery("SELECT o FROM Tank o WHERE o.id = :id ");
+            tanks = (List<Tank>) query.list();
+        } catch (NoResultException e) {
+
+        }
+        if (tanks.size() > 0) {
+            return tanks.get(0);
+        }
+        return null;
     }
 }

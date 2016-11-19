@@ -42,7 +42,7 @@ public class ItemDaoImpl implements ItemDao {
             Session em = getSession();
             Query query = em.createQuery("SELECT o FROM Item o order by 1 desc");
             items = (List<Item>) query.list();
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
 
         }
         return items;
@@ -55,9 +55,24 @@ public class ItemDaoImpl implements ItemDao {
             Session em = getSession();
             Query query = em.createQuery("SELECT o FROM Item o WHERE o.active = true order by 1 desc");
             items = (List<Item>) query.list();
-        }catch (NoResultException e){
+        } catch (NoResultException e) {
 
         }
         return items;
+    }
+
+    public Item getItem(Long id) {
+        List<Item> items = new ArrayList<>();
+        try {
+            Session em = getSession();
+            Query query = em.createQuery("SELECT o FROM Item o WHERE o.id = :id ");
+            items = (List<Item>) query.list();
+        } catch (NoResultException e) {
+
+        }
+        if (items.size() > 0) {
+            return items.get(0);
+        }
+        return null;
     }
 }
