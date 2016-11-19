@@ -1,114 +1,59 @@
-<div class="body-div" ng-controller="ItemCtrl as itemctrl">
-    <div class="body-inner-div">
-        <table>
-            <form>
-                <tr>
-                    <td>
-                        Item Name :
-                    </td>
-                    <td>
-                        <input class="text-box" ng-model="itemDTO.name"/>
-                    </td>
-                    <td>
-                        <input type="button" value="ADD" class="btn-box" ng-click="addItem()"/>
-                    </td>
-                </tr>
-            </form>
-        </table>
+<div class="body-div" ng-controller="TankCtrl as tankctrl">
+    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+        <div class="col-xs-12">
+            <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
+
+    <div class="body-inner-div row form-group">
+        <div class="col-sm-1">
+            Item Name :
+        </div>
+        <div class="col-md-5">
+            <input class="form-control" ng-model="tankDTO.name"/>
+        </div>
+        <div class="col-md-4">
+            <input type="button" value="ADD" class="btn btn-primary" ng-click="addTank()"/>
+        </div>
     </div>
     <div class="body-inner-div">
         <rd-widget>
             <!--<rd-widget-body classes="medium no-padding">-->
-            <div class="table-responsive">
-                <table class="table">
+            <div ng-if="items.length == 0">
+                <h3 class="text-center">No Data</h3>
+            </div>
+            <div class="table-responsive" ng-if="tanks.length != 0">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>FRONT DOOR E1236s</td>
+                    <tr ng-repeat="tank in tanks">
+                        <td>{{tank.name}}</td>
                         <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>SIDE MIRROR 2000E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>ENGINE 325134354832E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="ACTIVATE" class="btn-box btn-green">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                        <!--/-->
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
+                            <input type="button" value="DEACTIVATE" class="btn btn-danger">
                         </td>
                     </tr>
                     </tbody>
                 </table>
             </div>
             <!--</rd-widget-body>-->
-            <rd-widget-footer>
-                <ul class="pagination pagination-sm pull-right">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-                <div class="clearfix"></div>
-            </rd-widget-footer>
+            <!--<rd-widget-footer>-->
+            <!--<ul class="pagination pagination-sm pull-right">-->
+            <!--<li><a href="#">&laquo;</a></li>-->
+            <!--<li><a href="#">1</a></li>-->
+            <!--<li><a href="#">2</a></li>-->
+            <!--<li><a href="#">3</a></li>-->
+            <!--<li><a href="#">4</a></li>-->
+            <!--<li><a href="#">5</a></li>-->
+            <!--<li><a href="#">&raquo;</a></li>-->
+            <!--</ul>-->
+            <!--<div class="clearfix"></div>-->
+            <!--</rd-widget-footer>-->
         </rd-widget>
     </div>
 </div>
