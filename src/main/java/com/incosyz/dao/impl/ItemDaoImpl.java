@@ -40,7 +40,7 @@ public class ItemDaoImpl implements ItemDao {
         List<Item> items = new ArrayList<>();
         try {
             Session em = getSession();
-            Query query = em.createQuery("SELECT o FROM Item o");
+            Query query = em.createQuery("SELECT o FROM Item o order by 1 desc");
             items = (List<Item>) query.list();
         }catch (NoResultException e){
 

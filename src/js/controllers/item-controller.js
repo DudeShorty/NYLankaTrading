@@ -9,6 +9,18 @@ angular.module('RDash')
             name: null
         };
 
+        $scope.readItems = readItems;
+        function readItems() {
+            ItemService.read()
+                .success(function (data) {
+                    $scope.items = data;
+                })
+                .error(function (error) {
+                    console.error(error);
+                })
+        }
+        readItems();
+
         $scope.refreshItemDTO = refreshItemDTO;
         function refreshItemDTO() {
             $scope.itemDTO = {
@@ -22,10 +34,11 @@ angular.module('RDash')
             ItemService.insert($scope.itemDTO)
                 .success(function () {
                     refreshItemDTO();
+                    readItems();
                     AlertService.addSuccessAlert('Item Saved Successfully.')
                 })
                 .error(function (error) {
-                    alert(JSON.stringify(error));
+                    console.error(error);
                 });
         }
     }]);

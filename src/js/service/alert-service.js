@@ -3,25 +3,26 @@
  */
 
 angular.module('RDash')
-    .factory('AlertService', [function() {
-    return {
-        alerts: [],
-        addSuccessAlert: function(message) {
-            this.alerts.push({
-                type: 'success',
-                msg: message
-            });
-        },
-        addFailedAlert: function(message) {
-            this.alerts.push({
-                type: 'danger',
-                msg: message
-            });
-        },
-        clearAlerts: function() {
-            for(var x in this.alerts) {
-                delete this.alerts[x];
+    .factory('AlertService', ['$timeout', function (timeout) {
+        return {
+            alerts: [],
+            addSuccessAlert: function (message) {
+                var alert = {
+                    type: 'success',
+                    msg: message
+                }
+                this.alerts.push(alert);
+            },
+            addFailedAlert: function (message) {
+                this.alerts.push({
+                    type: 'danger',
+                    msg: message
+                });
+            },
+            clearAlerts: function () {
+                for (var x in this.alerts) {
+                    delete this.alerts[x];
+                }
             }
-        }
-    };
-}]);
+        };
+    }]);
