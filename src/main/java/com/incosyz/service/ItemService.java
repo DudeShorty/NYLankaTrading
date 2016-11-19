@@ -1,7 +1,6 @@
 package com.incosyz.service;
 
 import com.incosyz.dto.ItemDTO;
-import com.incosyz.entity.Item;
 
 import java.util.List;
 
@@ -11,6 +10,6 @@ import java.util.List;
 public interface ItemService {
     void add(ItemDTO itemDTO);
 
-    List<Item> get();
+    List<ItemDTO> get();
 
 }

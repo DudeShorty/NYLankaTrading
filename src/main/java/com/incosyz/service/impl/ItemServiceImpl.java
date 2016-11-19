@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,6 +17,7 @@ import java.util.List;
  */
 @Service
 public class ItemServiceImpl implements ItemService {
+
     @Autowired
     private ItemDao itemDao;
     @Autowired
@@ -30,8 +32,8 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public List<Item> get() {
-        return itemDao.getItem();
+    public List<ItemDTO> get() {
+        return generateItemDTOs(itemDao.getItem());
     }
 
     private ItemDTO generateItemDTO(Item item) {
@@ -40,5 +42,17 @@ public class ItemServiceImpl implements ItemService {
             itemDTO.setName(item.getItemName());
         }
         return itemDTO;
+    }
+
+    private List<ItemDTO> generateItemDTOs(List<Item> items) {
+        List<ItemDTO> itemDTOs = new ArrayList<>();
+        for (Item item : items) {
+            ItemDTO itemDTO = new ItemDTO();
+            if (!StringUtils.isEmpty(item.getItemName())) {
+                itemDTO.setName(item.getItemName());
+            }
+            itemDTOs.add(itemDTO);
+        }
+        return itemDTOs;
     }
 }

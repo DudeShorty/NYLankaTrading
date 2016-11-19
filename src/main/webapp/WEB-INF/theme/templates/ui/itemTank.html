@@ -1,22 +1,65 @@
 <div class="body-div" ng-controller="ItemCtrl as itemctrl">
-    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
-        <div class="col-xs-12">
-            <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
-        </div>
-    </div>
-
     <div class="body-inner-div">
         <table>
             <form>
                 <tr>
                     <td>
+                        Tank :
+                    </td>
+                    <td>
+                        <select class="text-box">
+                            <option>[PLEASE SELECT]</option>
+                            <option>BRAND A</option>
+                            <option>BRAND B</option>
+                            <option>BRAND C</option>
+                            <option>BRAND D</option>
+                            <option>BRAND E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         Item Name :
+                    </td>
+                    <td>
+                        <select class="text-box">
+                            <option>[PLEASE SELECT]</option>
+                            <option>BRAND A</option>
+                            <option>BRAND B</option>
+                            <option>BRAND C</option>
+                            <option>BRAND D</option>
+                            <option>BRAND E</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Qty :
                     </td>
                     <td>
                         <input class="text-box" ng-model="itemDTO.name">
                     </td>
+                </tr>
+                <tr>
                     <td>
-                        <input type="button" value="ADD" class="btn-box" ng-click="addItem()">
+                        Unit Price :
+                    </td>
+                    <td>
+                        <input class="text-box" ng-model="itemDTO.name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <input type="button" value="ADD" class="btn-box" ng-click="addItem()" style="float: right">
+                    </td>
+                    <td>
                     </td>
                 </tr>
             </form>
