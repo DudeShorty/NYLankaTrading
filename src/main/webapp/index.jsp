@@ -13,8 +13,9 @@
     <!-- Custom Scripts -->
     <script type="text/javascript" src="js/dashboard.min.js"></script>
 
+    <%--<link rel="stylesheet" href="WEB-INF/main.min.css"/>--%>
     <style>
-        body{
+        body {
             font-family: Calibri;
         }
     </style>
@@ -32,11 +33,17 @@
                 </a>
             </li>
             <li class="sidebar-title"><span>NAVIGATION</span></li>
+            <%--<li class="sidebar-list">--%>
+                <%--<a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>--%>
+            <%--</li>--%>
+            <%--<li class="sidebar-list">--%>
+                <%--<a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>--%>
+            <%--</li>--%>
             <li class="sidebar-list">
-                <a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>
+                <a href="#/item-tank">Add Item To Tank <span class="menu-icon fa fa-table"></span></a>
             </li>
             <li class="sidebar-list">
-                <a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>
+                <a href="#/tank">Tank <span class="menu-icon fa fa-table"></span></a>
             </li>
             <li class="sidebar-list">
                 <a href="#/item">Items <span class="menu-icon fa fa-table"></span></a>
@@ -49,21 +56,21 @@
             </li>
         </ul>
         <%--<div class="sidebar-footer">--%>
-            <%--<div class="col-xs-4">--%>
-                <%--<a href="https://github.com/rdash/rdash-angular" target="_blank">--%>
-                    <%--Github--%>
-                <%--</a>--%>
-            <%--</div>--%>
-            <%--<div class="col-xs-4">--%>
-                <%--<a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">--%>
-                    <%--About--%>
-                <%--</a>--%>
-            <%--</div>--%>
-            <%--<div class="col-xs-4">--%>
-                <%--<a href="#">--%>
-                    <%--Support--%>
-                <%--</a>--%>
-            <%--</div>--%>
+        <%--<div class="col-xs-4">--%>
+        <%--<a href="https://github.com/rdash/rdash-angular" target="_blank">--%>
+        <%--Github--%>
+        <%--</a>--%>
+        <%--</div>--%>
+        <%--<div class="col-xs-4">--%>
+        <%--<a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">--%>
+        <%--About--%>
+        <%--</a>--%>
+        <%--</div>--%>
+        <%--<div class="col-xs-4">--%>
+        <%--<a href="#">--%>
+        <%--Support--%>
+        <%--</a>--%>
+        <%--</div>--%>
         <%--</div>--%>
     </div>
     <!-- End Sidebar -->

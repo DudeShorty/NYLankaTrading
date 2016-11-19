@@ -28,13 +28,13 @@ public class ItemController {
 
     @RequestMapping(value = "/active", method = RequestMethod.GET)
     @ResponseBody
-    public void active(){
+    public void active() {
 
     }
 
     @RequestMapping(value = "/deactive", method = RequestMethod.GET)
     @ResponseBody
-    public void deactive(){
+    public void deactive() {
 
     }
 
@@ -45,7 +45,7 @@ public class ItemController {
         itemService.add(itemDTO);
     }
 
-    public void get(){
-       List<Item> list= itemService.get();
+    public void get() {
+        List<Item> list = itemService.get();
     }
 }
