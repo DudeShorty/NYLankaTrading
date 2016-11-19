@@ -46,6 +46,6 @@ public class ItemController {
     }
 
     public void get() {
-        List<Item> list = itemService.get();
+        List<ItemDTO> list = itemService.get();
     }
 }
