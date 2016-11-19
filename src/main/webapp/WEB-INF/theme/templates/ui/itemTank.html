@@ -1,4 +1,4 @@
-<div class="body-div" ng-controller="ItemCtrl as itemctrl">
+<div class="body-div" ng-controller="ItemTankCtrl as itemtankctrl">
     <div class="body-inner-div">
         <table>
             <form>
@@ -27,13 +27,9 @@
                         Item Name :
                     </td>
                     <td>
-                        <select class="text-box">
-                            <option>[PLEASE SELECT]</option>
-                            <option>BRAND A</option>
-                            <option>BRAND B</option>
-                            <option>BRAND C</option>
-                            <option>BRAND D</option>
-                            <option>BRAND E</option>
+                        <select class="text-box" ng-model="itamTankDTO.item_id">
+                            <option value="">[PLEASE SELECT]</option>
+                            <option ng-repeat="item in items" value="{{item.id}}">{{item.name}}</option>
                         </select>
                     </td>
                 </tr>

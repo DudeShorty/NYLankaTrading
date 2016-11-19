@@ -9,13 +9,17 @@ import java.io.Serializable;
  */
 public class ItemDTO implements Serializable {
 
+    @JsonProperty("id")
+    private Long id;
+
     @JsonProperty("name")
     private String name;
 
     public ItemDTO() {
     }
 
-    public ItemDTO(String name) {
+    public ItemDTO(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
@@ -25,5 +29,13 @@ public class ItemDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
