@@ -14,10 +14,6 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/',
                 templateUrl: 'templates/dashboard.html'
             })
-            .state('item-category', {
-                url: '/item-category',
-                templateUrl: 'templates/ui/itemCategory.html'
-            })
             .state('tables', {
                 url: '/tables',
                 templateUrl: 'templates/tables.html'
@@ -37,6 +33,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('brand', {
                 url: '/brand',
                 templateUrl: 'templates/master/brand.html'
+            })
+            .state('itemCategory', {
+                url: '/item-category',
+                templateUrl: 'templates/ui/itemCategory.html'
             })
             .state('model', {
                 url: '/model',
