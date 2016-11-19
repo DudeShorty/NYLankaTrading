@@ -9,4 +9,8 @@ import java.util.List;
  */
 public interface TankDao {
     public List<Tank> getTank();
+
+    public List<Tank> getTankActive();
+
+    public Tank getTanks(Long id);
 }

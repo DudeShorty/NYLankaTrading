@@ -36,6 +36,11 @@ public class ItemServiceImpl implements ItemService {
         return generateItemDTOs(itemDao.getItem());
     }
 
+    @Override
+    public List<ItemDTO> getItemActive() {
+        return generateItemDTOs(itemDao.getItemActive());
+    }
+
     private ItemDTO generateItemDTO(Item item) {
         ItemDTO itemDTO = new ItemDTO();
         if (!StringUtils.isEmpty(item.getItemName())) {

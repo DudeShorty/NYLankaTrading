@@ -12,4 +12,8 @@ public interface ItemDao {
 
     List<Item> getItem();
 
+    public List<Item> getItemActive();
+
+    public Item getItem(Long id);
+
 }

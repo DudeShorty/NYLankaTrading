@@ -12,4 +12,6 @@ public interface ItemService {
 
     List<ItemDTO> get();
 
+    public List<ItemDTO> getItemActive();
+
 }
