@@ -1,0 +1,94 @@
+<div class="body-div" ng-controller="TankCtrl as tankctrl">
+    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+        <div class="col-xs-12">
+            <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
+
+    <div class="body-inner-div row form-group">
+        <table>
+            <tr>
+                <td>
+                    Tank Name :
+                </td>
+                <td>
+                    <input class="text-box" ng-model="tankDTO.name"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Identify Number :
+                </td>
+                <td>
+                    <input class="text-box" ng-model="tankDTO.identify_number" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Received Date :
+                </td>
+                <td>
+                    <input type="date" class="text-box" ng-model="tankDTO.received_date" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Status :
+                </td>
+                <td>
+                    <textarea style="height: 100px" class="text-box" ng-model="tankDTO.status"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="ADD" class="btn-box" ng-click="addTank()"/></td>
+            </tr>
+        </table>
+    </div>
+    <div class="body-inner-div">
+        <rd-widget>
+            <!--<rd-widget-body classes="medium no-padding">-->
+            <div ng-if="tanks.length == 0">
+                <h3 class="text-center">No Data</h3>
+            </div>
+            <div class="table-responsive" ng-if="tanks.length != 0">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Identify Number</th>
+                        <th>Received Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="tank in tanks">
+                        <td>{{tank.name}}</td>
+                        <td>{{tank.identify_number}}</td>
+                        <td>{{tank.received_date}}</td>
+                        <td>{{tank.status}}</td>
+                        <td>
+                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--</rd-widget-body>-->
+            <!--<rd-widget-footer>-->
+            <!--<ul class="pagination pagination-sm pull-right">-->
+            <!--<li><a href="#">&laquo;</a></li>-->
+            <!--<li><a href="#">1</a></li>-->
+            <!--<li><a href="#">2</a></li>-->
+            <!--<li><a href="#">3</a></li>-->
+            <!--<li><a href="#">4</a></li>-->
+            <!--<li><a href="#">5</a></li>-->
+            <!--<li><a href="#">&raquo;</a></li>-->
+            <!--</ul>-->
+            <!--<div class="clearfix"></div>-->
+            <!--</rd-widget-footer>-->
+        </rd-widget>
+    </div>
+</div>

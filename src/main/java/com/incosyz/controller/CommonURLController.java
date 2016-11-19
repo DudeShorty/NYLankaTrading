@@ -12,10 +12,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class CommonURLController {
 
 	private final static Logger logger = LoggerFactory.getLogger(CommonURLController.class);
+//
+//	@RequestMapping(value = "/", method = RequestMethod.GET)
+//	public String welcome() {
+//		return "index";
+//	}
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String welcome(ModelMap model) {
-		return "index";
+	@RequestMapping(value = "/item", method = RequestMethod.GET)
+	public String item() {
+		return "item";
+	}
+
+	@RequestMapping(value = "/brand", method = RequestMethod.GET)
+	public String brand() {
+		return "brand";
 	}
 
 }
