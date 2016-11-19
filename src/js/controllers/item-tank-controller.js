@@ -3,12 +3,12 @@
  */
 
 angular.module('RDash')
-    .controller('ItemTankCtrl', ['$scope', 'ItemService', 'ItemTankService', 'AlertService',
-        function ($scope, ItemService, ItemTankService, AlertService) {
+    .controller('ItemTankCtrl', ['$scope', 'ItemService', 'TankService', 'ItemTankService', 'AlertService',
+        function ($scope, ItemService, TankService, ItemTankService, AlertService) {
 
             $scope.loadItemTankDTO = loadItemTankDTO;
             function loadItemTankDTO() {
-                $scope.itemTank = {
+                $scope.itemTankDTO = {
                     "tank_id": -1,
                     "item_id": -1,
                     "qty": 0,
@@ -28,4 +28,31 @@ angular.module('RDash')
                     });
             }
             loadItems();
+
+            $scope.loadTanks = loadTanks;
+            function loadTanks() {
+                TankService.readActive()
+                    .success(function (data) {
+                        $scope.tanks = data;
+                    })
+                    .error(function (error) {
+                        console.error(error);
+                    });
+            }
+            loadTanks();
+
+            $scope.addItemTank = addItemTank;
+            function addItemTank() {
+                console.log('addItemTank');
+                ItemTankService.insert($scope.itemTankDTO)
+                    .success(function () {
+                        loadItemTankDTO();
+                        loadItems();
+                        loadTanks();
+                        AlertService.addSuccessAlert('Item Successfully Added To Tank.');
+                    })
+                    .error(function (error) {
+                        console.error(error);
+                    })
+            }
         }]);

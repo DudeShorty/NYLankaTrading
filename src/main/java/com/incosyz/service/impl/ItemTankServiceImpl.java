@@ -27,14 +27,15 @@ public class ItemTankServiceImpl implements ItemTankService {
     @Autowired
     private ItemDao itemDao;
 
+    @Override
     public void save(ItemTankDTO itemTankDTO) {
-        ItemTank itemTank = generateItenTankDto(itemTankDTO);
+        ItemTank itemTank = generateItemTankDto(itemTankDTO);
         if (itemTank != null) {
             abstractDao.save(itemTank);
         }
     }
 
-    public ItemTank generateItenTankDto(ItemTankDTO itemTankDTO) {
+    public ItemTank generateItemTankDto(ItemTankDTO itemTankDTO) {
         ItemTank itemTank = new ItemTank();
 
         Long itemId = itemTankDTO.getItemId();

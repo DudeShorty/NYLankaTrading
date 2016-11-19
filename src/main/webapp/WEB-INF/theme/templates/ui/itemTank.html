@@ -1,4 +1,12 @@
 <div class="body-div" ng-controller="ItemTankCtrl as itemtankctrl">
+
+    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+        <div class="col-xs-12">
+            <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
+
     <div class="body-inner-div">
         <table>
             <form>
@@ -7,13 +15,9 @@
                         Tank :
                     </td>
                     <td>
-                        <select class="text-box">
+                        <select class="text-box" ng-model="itemTankDTO.tank_id">
                             <option>[PLEASE SELECT]</option>
-                            <option>BRAND A</option>
-                            <option>BRAND B</option>
-                            <option>BRAND C</option>
-                            <option>BRAND D</option>
-                            <option>BRAND E</option>
+                            <option ng-repeat="tank in tanks" value="{{tank.id}}">{{tank.name}}</option>
                         </select>
                     </td>
                 </tr>
@@ -27,7 +31,7 @@
                         Item Name :
                     </td>
                     <td>
-                        <select class="text-box" ng-model="itamTankDTO.item_id">
+                        <select class="text-box" ng-model="itemTankDTO.item_id">
                             <option value="">[PLEASE SELECT]</option>
                             <option ng-repeat="item in items" value="{{item.id}}">{{item.name}}</option>
                         </select>
@@ -38,7 +42,7 @@
                         Qty :
                     </td>
                     <td>
-                        <input class="text-box" ng-model="itemDTO.name">
+                        <input class="text-box" ng-model="itemTankDTO.qty">
                     </td>
                 </tr>
                 <tr>
@@ -46,14 +50,14 @@
                         Unit Price :
                     </td>
                     <td>
-                        <input class="text-box" ng-model="itemDTO.name">
+                        <input class="text-box" ng-model="itemTankDTO.unit_price">
                     </td>
                 </tr>
                 <tr>
                     <td>
                     </td>
                     <td>
-                        <input type="button" value="ADD" class="btn-box" ng-click="addItem()" style="float: right">
+                        <input type="button" value="ADD" class="btn-box" ng-click="addItemTank()" style="float: right">
                     </td>
                     <td>
                     </td>

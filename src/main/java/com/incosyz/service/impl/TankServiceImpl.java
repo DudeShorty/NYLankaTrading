@@ -37,7 +37,7 @@ public class TankServiceImpl implements TankService {
 
     @Override
     public List<TankDTO> getTankActive() {
-        List<Tank> tanks = tankDao.getTank();
+        List<Tank> tanks = tankDao.getTankActive();
         return generateTankDTOs(tanks);
     }
 
@@ -62,6 +62,7 @@ public class TankServiceImpl implements TankService {
             tankDTO.setName(tank.getTankName());
             tankDTO.setReceivedDate(tank.getReceivedDate());
             tankDTO.setStatus(tank.getStatus());
+            tankDTO.setId(tank.getId());
             tankDTOs.add(tankDTO);
         }
         return tankDTOs;

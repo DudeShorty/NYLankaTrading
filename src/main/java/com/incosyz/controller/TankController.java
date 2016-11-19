@@ -3,6 +3,8 @@ package com.incosyz.controller;
 import com.incosyz.dto.TankDTO;
 import com.incosyz.service.TankService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,5 +33,11 @@ public class TankController {
     @ResponseBody
     public List<TankDTO> get() {
         return tankService.getTanks();
+    }
+
+    @RequestMapping(value = "/get/active", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<TankDTO>> getActiveTanks() {
+        return new ResponseEntity<List<TankDTO>>(tankService.getTankActive(), HttpStatus.OK);
     }
 }

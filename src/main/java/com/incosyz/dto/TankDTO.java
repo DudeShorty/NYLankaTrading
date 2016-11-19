@@ -11,6 +11,9 @@ import java.util.Date;
  */
 public class TankDTO implements Serializable {
 
+    @JsonProperty("id")
+    private Long id;
+
     @JsonProperty("name")
     private String name;
 
@@ -27,7 +30,8 @@ public class TankDTO implements Serializable {
     public TankDTO() {
     }
 
-    public TankDTO(String name, String identifyNumber, Date receivedDate, String status) {
+    public TankDTO(Long id, String name, String identifyNumber, Date receivedDate, String status) {
+        this.id = id;
         this.name = name;
         this.identifyNumber = identifyNumber;
         this.receivedDate = receivedDate;
@@ -68,5 +72,13 @@ public class TankDTO implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

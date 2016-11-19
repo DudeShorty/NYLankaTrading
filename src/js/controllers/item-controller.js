@@ -27,6 +27,7 @@ angular.module('RDash')
                 "name" : null
             };
         }
+        refreshItemDTO();
 
         $scope.addItem = addItem;
         function addItem() {

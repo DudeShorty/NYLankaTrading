@@ -13,6 +13,9 @@ angular.module('RDash')
             },
             read : function () {
                 return $http.get(baseURL + '/get');
+            },
+            readActive : function () {
+                return $http.get(baseURL + '/get/active');
             }
         };
     }]);

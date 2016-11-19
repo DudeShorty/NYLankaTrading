@@ -43,6 +43,7 @@ public class ItemServiceImpl implements ItemService {
 
     private ItemDTO generateItemDTO(Item item) {
         ItemDTO itemDTO = new ItemDTO();
+        itemDTO.setId(item.getId());
         if (!StringUtils.isEmpty(item.getItemName())) {
             itemDTO.setName(item.getItemName());
         }
@@ -53,6 +54,7 @@ public class ItemServiceImpl implements ItemService {
         List<ItemDTO> itemDTOs = new ArrayList<>();
         for (Item item : items) {
             ItemDTO itemDTO = new ItemDTO();
+            itemDTO.setId(item.getId());
             if (!StringUtils.isEmpty(item.getItemName())) {
                 itemDTO.setName(item.getItemName());
             }

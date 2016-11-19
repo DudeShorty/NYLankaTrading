@@ -3,10 +3,10 @@
  */
 angular.module('RDash')
     .factory('ItemTankService', ['$http', function ($http) {
-        var baseURL = 'v1/itemtank';
+        var baseURL = 'v1/itemTank';
         return {
-            insert : function (item) {
-                return $http.post(baseURL + '/add', item);
+            insert : function (itemTank) {
+                return $http.post(baseURL + '/add', itemTank);
             },
             search : function () {
 

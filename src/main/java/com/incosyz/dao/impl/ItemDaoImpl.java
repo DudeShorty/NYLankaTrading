@@ -62,16 +62,13 @@ public class ItemDaoImpl implements ItemDao {
     }
 
     public Item getItem(Long id) {
-        List<Item> items = new ArrayList<>();
         try {
             Session em = getSession();
-            Query query = em.createQuery("SELECT o FROM Item o WHERE o.id = :id ");
-            items = (List<Item>) query.list();
+            Query query = em.createQuery("SELECT o FROM Item o WHERE o.Id = :id ");
+            query.setParameter("id", id);
+            return (Item) query.uniqueResult();
         } catch (NoResultException e) {
 
-        }
-        if (items.size() > 0) {
-            return items.get(0);
         }
         return null;
     }

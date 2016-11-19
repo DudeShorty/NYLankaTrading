@@ -56,16 +56,13 @@ public class TankDaoImpl implements TankDao {
 
 
     public Tank getTanks(Long id) {
-        List<Tank> tanks = new ArrayList<>();
         try {
             Session em = getSession();
-            Query query = em.createQuery("SELECT o FROM Tank o WHERE o.id = :id ");
-            tanks = (List<Tank>) query.list();
+            Query query = em.createQuery("SELECT o FROM Tank o WHERE o.Id = :id ");
+            query.setParameter("id", id);
+            return (Tank) query.uniqueResult();
         } catch (NoResultException e) {
 
-        }
-        if (tanks.size() > 0) {
-            return tanks.get(0);
         }
         return null;
     }
