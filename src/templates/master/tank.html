@@ -7,15 +7,19 @@
     </div>
 
     <div class="body-inner-div row form-group">
-        <div class="col-sm-1">
-            Item Name :
-        </div>
-        <div class="col-md-5">
-            <input class="form-control" ng-model="tankDTO.name"/>
-        </div>
-        <div class="col-md-4">
-            <input type="button" value="ADD" class="btn btn-primary" ng-click="addTank()"/>
-        </div>
+        <table>
+            <tr>
+                <td>
+                    Tank Name :
+                </td>
+                <td>
+                    <input class="text-box" ng-model="tankDTO.name"/>
+                </td>
+                <td>
+                    <input type="button" value="ADD" class="btn-box" ng-click="addTank()"/>
+                </td>
+            </tr>
+        </table>
     </div>
     <div class="body-inner-div">
         <rd-widget>
@@ -35,7 +39,7 @@
                     <tr ng-repeat="tank in tanks">
                         <td>{{tank.name}}</td>
                         <td>
-                            <input type="button" value="DEACTIVATE" class="btn btn-danger">
+                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
                     </tr>
                     </tbody>
