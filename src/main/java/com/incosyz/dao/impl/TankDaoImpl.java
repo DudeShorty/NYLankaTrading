@@ -32,6 +32,19 @@ public class TankDaoImpl implements TankDao {
         Session session = getSession();
         List<Tank> list = new ArrayList<>();
         try {
+            Query query = session.createQuery("SELECT o FROM Tank o ");
+            list = (List<Tank>) query.list();
+        } catch (Exception e) {
+
+        }
+        return list;
+    }
+
+    @Override
+    public List<Tank> getTankActive() {
+        Session session = getSession();
+        List<Tank> list = new ArrayList<>();
+        try {
             Query query = session.createQuery("SELECT o FROM Tank o WHERE o.active = true ");
             list = (List<Tank>) query.list();
         } catch (Exception e) {

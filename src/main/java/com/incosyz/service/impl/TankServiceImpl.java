@@ -26,18 +26,35 @@ public class TankServiceImpl implements TankService {
 
     @Override
     public void add(TankDTO tankDTO) {
-        Tank tank = new Tank();
-        tank.setIdentifyNumber(tankDTO.getIdentifyNumber());
-        tank.setReceivedDate(tankDTO.getReceivedDate());
-        tank.setStatus(tankDTO.getStatus());
-        tank.setTankName(tankDTO.getName());
-        tank.setActive(true);
-        MethodResult save = abstractDao.save(tank);
+        MethodResult save = abstractDao.save(generateTanks(tankDTO));
     }
 
     @Override
     public List<TankDTO> getTanks() {
         List<Tank> tanks = tankDao.getTank();
+        return generateTankDTOs(tanks);
+    }
+
+    @Override
+    public List<TankDTO> getTankActive() {
+        List<Tank> tanks = tankDao.getTank();
+        return generateTankDTOs(tanks);
+    }
+
+    public Tank generateTanks(TankDTO tankDTO) {
+        if (tankDTO != null) {
+            Tank tank = new Tank();
+            tank.setIdentifyNumber(tankDTO.getIdentifyNumber());
+            tank.setReceivedDate(tankDTO.getReceivedDate());
+            tank.setStatus(tankDTO.getStatus());
+            tank.setTankName(tankDTO.getName());
+            tank.setActive(true);
+            return tank;
+        }
+        return null;
+    }
+
+    public List<TankDTO> generateTankDTOs(List<Tank> tanks) {
         List<TankDTO> tankDTOs = new ArrayList<>();
         for (Tank tank : tanks) {
             TankDTO tankDTO = new TankDTO();

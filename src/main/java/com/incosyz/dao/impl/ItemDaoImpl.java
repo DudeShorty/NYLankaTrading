@@ -47,4 +47,17 @@ public class ItemDaoImpl implements ItemDao {
         }
         return items;
     }
+
+    @Override
+    public List<Item> getItemActive() {
+        List<Item> items = new ArrayList<>();
+        try {
+            Session em = getSession();
+            Query query = em.createQuery("SELECT o FROM Item o WHERE o.active = true order by 1 desc");
+            items = (List<Item>) query.list();
+        }catch (NoResultException e){
+
+        }
+        return items;
+    }
 }
