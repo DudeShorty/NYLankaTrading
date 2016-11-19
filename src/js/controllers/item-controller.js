@@ -6,7 +6,7 @@ angular.module('RDash')
 
         console.log('ItemCtrl');
         $scope.itemDTO = {
-            name: null
+            "name": null
         };
 
         $scope.readItems = readItems;

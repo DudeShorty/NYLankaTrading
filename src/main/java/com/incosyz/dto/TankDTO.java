@@ -3,12 +3,13 @@ package com.incosyz.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  * Created by Aux-058 on 11/19/2016.
  */
-public class TankDTO {
+public class TankDTO implements Serializable {
 
     @JsonProperty("name")
     private String name;
@@ -16,7 +17,7 @@ public class TankDTO {
     @JsonProperty("identify_number")
     private String identifyNumber;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mma", timezone = "IST")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "IST")
     @JsonProperty("received_date")
     private Date receivedDate;
 

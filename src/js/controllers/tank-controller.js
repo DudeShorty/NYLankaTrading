@@ -8,9 +8,6 @@ angular.module('RDash')
     .controller('TankCtrl', ['$scope', 'TankService', 'AlertService', function ($scope, TankService, AlertService) {
 
         console.log('TankCtrl');
-        $scope.tankDTO = {
-            name: null
-        };
 
         $scope.readTanks = readTanks;
         function readTanks() {
@@ -26,10 +23,15 @@ angular.module('RDash')
 
         $scope.refreshTankDTO = refreshTankDTO;
         function refreshTankDTO() {
+            var date = new Date();
             $scope.tankDTO = {
-                "name" : null
+                "name": null,
+                "identify_number": null,
+                "received_date": date,
+                "status": null
             };
         }
+        refreshTankDTO();
 
         $scope.addTank = addTank;
         function addTank() {

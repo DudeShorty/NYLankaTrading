@@ -31,6 +31,7 @@ public class TankServiceImpl implements TankService {
         tank.setReceivedDate(tankDTO.getReceivedDate());
         tank.setStatus(tankDTO.getStatus());
         tank.setTankName(tankDTO.getName());
+        tank.setActive(true);
         MethodResult save = abstractDao.save(tank);
     }
 

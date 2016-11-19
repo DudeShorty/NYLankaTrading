@@ -21,7 +21,7 @@
                     Identify Number :
                 </td>
                 <td>
-                    <input class="text-box">
+                    <input class="text-box" ng-model="tankDTO.identify_number">
                 </td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                     Received Date :
                 </td>
                 <td>
-                    <input type="date" class="text-box">
+                    <input type="date" class="text-box" ng-model="tankDTO.received_date">
                 </td>
             </tr>
             <tr>
@@ -37,7 +37,7 @@
                     Status :
                 </td>
                 <td>
-                    <textarea style="height: 100px" class="text-box"></textarea>
+                    <textarea style="height: 100px" class="text-box" ng-model="tankDTO.status"></textarea>
                 </td>
             </tr>
             <tr>
@@ -49,7 +49,7 @@
     <div class="body-inner-div">
         <rd-widget>
             <!--<rd-widget-body classes="medium no-padding">-->
-            <div ng-if="items.length == 0">
+            <div ng-if="tanks.length == 0">
                 <h3 class="text-center">No Data</h3>
             </div>
             <div class="table-responsive" ng-if="tanks.length != 0">
@@ -57,12 +57,18 @@
                     <thead>
                     <tr>
                         <th>Name</th>
+                        <th>Identify Number</th>
+                        <th>Received Date</th>
+                        <th>Status</th>
                         <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat="tank in tanks">
                         <td>{{tank.name}}</td>
+                        <td>{{tank.identify_number}}</td>
+                        <td>{{tank.received_date}}</td>
+                        <td>{{tank.status}}</td>
                         <td>
                             <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
