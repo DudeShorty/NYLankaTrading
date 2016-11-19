@@ -34,10 +34,13 @@
             </li>
             <li class="sidebar-title"><span>NAVIGATION</span></li>
             <%--<li class="sidebar-list">--%>
-                <%--<a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>--%>
+            <%--<a href="#">Dashboard <span class="menu-icon fa fa-tachometer"></span></a>--%>
             <%--</li>--%>
             <%--<li class="sidebar-list">--%>
-                <%--<a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>--%>
+            <%--<a href="#/tables">Tables <span class="menu-icon fa fa-table"></span></a>--%>
+            <%--&lt;%&ndash;</li>&ndash;%&gt;--%>
+            <%--<li class="sidebar-list">--%>
+                <%--<a href="#/item-category">Item Category <span class="menu-icon fa fa-table"></span></a>--%>
             <%--</li>--%>
             <li class="sidebar-list">
                 <a href="#/item-tank">Add Item To Tank <span class="menu-icon fa fa-table"></span></a>
