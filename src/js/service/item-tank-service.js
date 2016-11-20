@@ -11,8 +11,8 @@ angular.module('RDash')
             search : function () {
 
             },
-            read : function () {
-                return $http.get(baseURL + '/get');
+            read : function (tankId) {
+                return $http.get(baseURL + '/get/' + tankId);
             }
         };
     }]);

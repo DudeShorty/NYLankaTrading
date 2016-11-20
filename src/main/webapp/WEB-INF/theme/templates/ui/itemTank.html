@@ -15,8 +15,8 @@
                         Tank :
                     </td>
                     <td>
-                        <select class="text-box" ng-model="itemTankDTO.tank_id">
-                            <option>[PLEASE SELECT]</option>
+                        <select class="text-box" ng-model="itemTankDTO.tank_id" ng-change="loadItemTanks()">
+                            <option value="">[PLEASE SELECT]</option>
                             <option ng-repeat="tank in tanks" value="{{tank.id}}">{{tank.name}}</option>
                         </select>
                     </td>
@@ -68,96 +68,45 @@
     <div class="body-inner-div">
         <rd-widget>
             <!--<rd-widget-body classes="medium no-padding">-->
-            <div class="table-responsive">
-                <table class="table">
+            <div ng-if="itemTanks.length == 0">
+                <h3 class="text-center">No Data</h3>
+            </div>
+            <div class="table-responsive" ng-if="itemTanks.length != 0">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Tank</th>
+                        <th>Item</th>
+                        <th>Qty</th>
+                        <th>Unit Price</th>
+                        <th style="text-align: right">Action</th>
+                    </tr>
                     <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>FRONT DOOR E1236s</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>SIDE MIRROR 2000E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>ENGINE 325134354832E</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="ACTIVATE" class="btn-box btn-green">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                        <!--/-->
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
-                        <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>RDVMPC001</td>
+                    <tr ng-repeat="singleItemTank in itemTanks">
+                        <td>{{singleItemTank.tankDTO.name}}</td>
+                        <td>{{singleItemTank.itemDTO.name}}</td>
+                        <td>{{singleItemTank.qty}}</td>
+                        <td>{{singleItemTank.unit_price}}</td>
                         <td>
                             <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
                     </tr>
                     </tbody>
-                </table>
+                </thead></table>
             </div>
             <!--</rd-widget-body>-->
-            <rd-widget-footer>
-                <ul class="pagination pagination-sm pull-right">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-                <div class="clearfix"></div>
-            </rd-widget-footer>
+            <!--<rd-widget-footer>-->
+                <!--<ul class="pagination pagination-sm pull-right">-->
+                    <!--<li><a href="#">&laquo;</a></li>-->
+                    <!--<li><a href="#">1</a></li>-->
+                    <!--<li><a href="#">2</a></li>-->
+                    <!--<li><a href="#">3</a></li>-->
+                    <!--<li><a href="#">4</a></li>-->
+                    <!--<li><a href="#">5</a></li>-->
+                    <!--<li><a href="#">&raquo;</a></li>-->
+                <!--</ul>-->
+                <!--<div class="clearfix"></div>-->
+            <!--</rd-widget-footer>-->
         </rd-widget>
     </div>
 </div>

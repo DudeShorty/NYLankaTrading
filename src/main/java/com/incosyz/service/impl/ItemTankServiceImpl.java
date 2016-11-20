@@ -44,6 +44,7 @@ public class ItemTankServiceImpl implements ItemTankService {
         }
     }
 
+    @Override
     public List<ItemTankDTO> getItemTank(Long id) {
         return generateItemTankDTOs(itemTankDao.getItemTank(id));
     }
@@ -87,6 +88,7 @@ public class ItemTankServiceImpl implements ItemTankService {
                 TankDTO tankDTO = generateTankDTO(tank);
                 itemTankDTO.setTankDTO(tankDTO);
             }
+            itemTankDTOs.add(itemTankDTO);
         }
         return itemTankDTOs;
     }

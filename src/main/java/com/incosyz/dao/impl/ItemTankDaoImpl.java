@@ -2,6 +2,7 @@ package com.incosyz.dao.impl;
 
 import com.incosyz.dao.ItemTankDao;
 import com.incosyz.entity.ItemTank;
+import com.incosyz.entity.Tank;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -32,7 +33,8 @@ public class ItemTankDaoImpl implements ItemTankDao {
         Session em = getSession();
         List<ItemTank> itemTanks = new ArrayList<>();
         try {
-            Query query = em.createQuery("SELECT o FROM ItemTank o WHERE o.active = true ");
+            Query query = em.createQuery("SELECT o FROM ItemTank o WHERE o.active = true AND o.tank.Id = :tankId");
+            query.setParameter("tankId", id);
             itemTanks = (List<ItemTank>) query.list();
         } catch (Exception e) {
         }

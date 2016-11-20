@@ -1,6 +1,7 @@
 package com.incosyz.dao;
 
 import com.incosyz.entity.ItemTank;
+import com.incosyz.entity.Tank;
 
 import java.util.List;
 
