@@ -8,6 +8,7 @@ import com.incosyz.entity.Tank;
 import com.incosyz.service.TankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,12 +42,14 @@ public class TankServiceImpl implements TankService {
         return generateTankDTOs(tanks);
     }
 
-    public Tank generateTanks(TankDTO tankDTO) {
+    private Tank generateTanks(TankDTO tankDTO) {
         if (tankDTO != null) {
             Tank tank = new Tank();
             tank.setIdentifyNumber(tankDTO.getIdentifyNumber());
             tank.setReceivedDate(tankDTO.getReceivedDate());
-            tank.setStatus(tankDTO.getStatus());
+            if(!StringUtils.isEmpty(tankDTO.getStatus())) {
+                tank.setStatus(tankDTO.getStatus());
+            }
             tank.setTankName(tankDTO.getName());
             tank.setActive(true);
             return tank;
@@ -54,7 +57,7 @@ public class TankServiceImpl implements TankService {
         return null;
     }
 
-    public List<TankDTO> generateTankDTOs(List<Tank> tanks) {
+    private List<TankDTO> generateTankDTOs(List<Tank> tanks) {
         List<TankDTO> tankDTOs = new ArrayList<>();
         for (Tank tank : tanks) {
             TankDTO tankDTO = new TankDTO();

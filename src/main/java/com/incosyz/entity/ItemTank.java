@@ -29,6 +29,9 @@ public class ItemTank extends BaseModel {
     @Column(name = "UNIT_PRICE")
     private double unitPrice;
 
+    @Column(name = "ACTIVE")
+    private boolean active;
+
     public Long getId() {
         return Id;
     }
@@ -67,5 +70,13 @@ public class ItemTank extends BaseModel {
 
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 }

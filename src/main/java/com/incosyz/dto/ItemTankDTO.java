@@ -24,6 +24,12 @@ public class ItemTankDTO implements Serializable {
     @JsonProperty("unit_price")
     private double unitPrice;
 
+    private TankDTO tankDTO;
+
+    private ItemDTO itemDTO;
+
+    private boolean categorized;
+
     public ItemTankDTO() {
     }
 
@@ -73,5 +79,29 @@ public class ItemTankDTO implements Serializable {
 
     public void setUnitPrice(double unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public TankDTO getTankDTO() {
+        return tankDTO;
+    }
+
+    public void setTankDTO(TankDTO tankDTO) {
+        this.tankDTO = tankDTO;
+    }
+
+    public ItemDTO getItemDTO() {
+        return itemDTO;
+    }
+
+    public void setItemDTO(ItemDTO itemDTO) {
+        this.itemDTO = itemDTO;
+    }
+
+    public boolean isCategorized() {
+        return categorized;
+    }
+
+    public void setCategorized(boolean categorized) {
+        this.categorized = categorized;
     }
 }
