@@ -47,6 +47,14 @@ public class UserDaoImpl implements UserDao {
     @Override
     public List<UserRole> findRoleByUserName(String username) {
         List<UserRole> userRoles = new ArrayList<>();
+        Session em = getSession();
+        try {
+            Query query = em.createQuery("SELECT o.userRole FROM UserRoleDetails o WHERE o.user.username = :username ");
+            query.setParameter("username", username);
+            userRoles = (List<UserRole>) query.list();
+        } catch (NoResultException e) {
+
+        }
         return userRoles;
     }
 }

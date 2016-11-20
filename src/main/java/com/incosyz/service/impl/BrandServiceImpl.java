@@ -58,6 +58,7 @@ public class BrandServiceImpl implements BrandService {
             if (brand.getCreatedDate() != null) {
                 brandDTO.setCreatedDate(brand.getCreatedDate());
             }
+            brandDTOs.add(brandDTO);
         }
         return brandDTOs;
     }

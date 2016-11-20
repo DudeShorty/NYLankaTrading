@@ -35,4 +35,16 @@ public class BrandDaoImpl implements BrandDao {
         }
         return new ArrayList<>();
     }
+
+    @Override
+    public List<Brand> getAllBrandsActive() {
+        Session session = getSession();
+        Query query = session.createQuery("SELECT b from Brand b WHERE b.active = true ORDER BY 1 DESC");
+        try {
+            return (List<Brand>) query.list();
+        } catch (Exception ex) {
+
+        }
+        return new ArrayList<>();
+    }
 }
