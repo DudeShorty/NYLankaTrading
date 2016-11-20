@@ -23,6 +23,9 @@ public class User implements Serializable {
     @Column(name = "PASSWORD")
     private String password;
 
+    @Column(name = "ACTIVE")
+    private Boolean active;
+
     @Column(name = "FIRST_NAME")
     private String firstName;
 
@@ -97,5 +100,29 @@ public class User implements Serializable {
 
     public void setBranch(Branch branch) {
         this.branch = branch;
+    }
+
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

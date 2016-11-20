@@ -32,6 +32,7 @@ public class BrandController {
     @RequestMapping(value = "/get", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<List<BrandDTO>> getAll() {
-        return new ResponseEntity<List<BrandDTO>>(brandService.getAllBrands(), HttpStatus.OK);
+        List<BrandDTO> allBrands = brandService.getAllBrands();
+        return new ResponseEntity<List<BrandDTO>>(allBrands, HttpStatus.OK);
     }
 }
