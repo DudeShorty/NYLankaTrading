@@ -17,7 +17,10 @@
     <div class="body-inner-div">
         <rd-widget>
             <!--<rd-widget-body classes="medium no-padding">-->
-            <div class="table-responsive">
+            <div ng-if="brands.length == 0">
+                <h3 class="text-center">No Data</h3>
+            </div>
+            <div class="table-responsive" ng-if="brands.length != 0">
                 <table class="table">
                     <thead>
                         <tr>
@@ -30,8 +33,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>FRONT DOOR E1236s</td>
+                    <tr ng-repeat="brand in brands">
+                        <td>{{brand.name}}</td>
                         <td>
                             <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
@@ -40,18 +43,18 @@
                 </table>
             </div>
             <!--</rd-widget-body>-->
-            <rd-widget-footer>
-                <ul class="pagination pagination-sm pull-right">
-                    <li><a href="#">&laquo;</a></li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                </ul>
-                <div class="clearfix"></div>
-            </rd-widget-footer>
+            <!--<rd-widget-footer>-->
+                <!--<ul class="pagination pagination-sm pull-right">-->
+                    <!--<li><a href="#">&laquo;</a></li>-->
+                    <!--<li><a href="#">1</a></li>-->
+                    <!--<li><a href="#">2</a></li>-->
+                    <!--<li><a href="#">3</a></li>-->
+                    <!--<li><a href="#">4</a></li>-->
+                    <!--<li><a href="#">5</a></li>-->
+                    <!--<li><a href="#">&raquo;</a></li>-->
+                <!--</ul>-->
+                <!--<div class="clearfix"></div>-->
+            <!--</rd-widget-footer>-->
         </rd-widget>
     </div>
 </div>

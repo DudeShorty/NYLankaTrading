@@ -7,7 +7,7 @@ angular.module('RDash')
         console.log('BrandCtrl');
         $scope.brandDTO = {
             name: null,
-            active: 1
+            active: true
         };
 
         $scope.addBrand = addBrand;
@@ -18,19 +18,19 @@ angular.module('RDash')
                     alert('Success');
                 })
                 .error(function (error) {
-                    alert(JSON.stringify(error));
+                    console.error(error);
                 });
         }
 
-        // $scope.readAll = readAll;
-        // function readAll() {
-        //     BrandService.readAll()
-        //         .success(function (data) {
-        //             $scope.items = data;
-        //         })
-        //         .error(function (error) {
-        //             alert(JSON.stringify(error));
-        //         });
-        // }
-        // readAll();
+        $scope.readAll = readAll;
+        function readAll() {
+            BrandService.readAll()
+                .success(function (data) {
+                    $scope.brands = data;
+                })
+                .error(function (error) {
+                    console.error(error);
+                });
+        }
+        readAll();
     }]);
