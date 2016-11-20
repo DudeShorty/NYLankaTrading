@@ -3,13 +3,20 @@ package com.incosyz.entity;
 import com.incosyz.dto.BaseModel;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * Created by Stelan Briyan on 11/20/2016.
  */
 @Entity
 @Table(name = "USER")
-public class User extends BaseModel {
+public class User implements Serializable {
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false)
+    private Long Id;
+
     @Column(name = "USERNAME")
     private String username;
 
@@ -29,8 +36,12 @@ public class User extends BaseModel {
     private String mobileNo;
 
     @ManyToOne
-    @JoinColumn(name = "fk_USER_ROLE")
-    private UserRole userRole;
+    @JoinColumn(name = "fk_BRANCH")
+    private Branch branch;
+
+    @Column(columnDefinition = "DATETIME", name = "CREATED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdDate = new Date();
 
     public String getUsername() {
         return username;
@@ -80,11 +91,11 @@ public class User extends BaseModel {
         this.mobileNo = mobileNo;
     }
 
-    public UserRole getUserRole() {
-        return userRole;
+    public Branch getBranch() {
+        return branch;
     }
 
-    public void setUserRole(UserRole userRole) {
-        this.userRole = userRole;
+    public void setBranch(Branch branch) {
+        this.branch = branch;
     }
 }

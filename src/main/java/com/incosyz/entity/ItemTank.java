@@ -8,7 +8,7 @@ import javax.persistence.*;
  * Created by Stelan Briyan on 11/19/2016.
  */
 @Entity
-@Table(name = "ITEM_TANK")
+@Table(name = "DETAIL_ITEM_TANK")
 public class ItemTank extends BaseModel {
     @ManyToOne
     @JoinColumn(name = "fk_TANK")

@@ -10,7 +10,7 @@ import javax.persistence.Table;
  * Created by Stelan Briyan on 11/20/2016.
  */
 @Entity
-@Table(name = "USER_ROLE")
+@Table(name = "MASTER_USER_ROLE")
 public class UserRole extends BaseModel {
     @Column(name="ROLE")
     private String role;

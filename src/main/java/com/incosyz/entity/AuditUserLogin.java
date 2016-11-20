@@ -13,15 +13,5 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "AUDIT_USER_LOGIN")
 public class AuditUserLogin extends BaseModel {
-    @ManyToOne
-    @JoinColumn(name = "fk_USER")
-    private User user;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

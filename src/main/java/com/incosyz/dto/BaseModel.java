@@ -1,5 +1,7 @@
 package com.incosyz.dto;
 
+import com.incosyz.entity.User;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -19,6 +21,10 @@ public class BaseModel implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdDate = new Date();
 
+    @ManyToOne
+    @JoinColumn(name = "fk_CREATED_USER")
+    private User createdUser;
+
     public Long getId() {
         return Id;
     }
@@ -33,5 +39,13 @@ public class BaseModel implements Serializable {
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public User getCreatedUser() {
+        return createdUser;
+    }
+
+    public void setCreatedUser(User createdUser) {
+        this.createdUser = createdUser;
     }
 }
