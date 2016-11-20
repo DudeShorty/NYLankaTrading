@@ -11,11 +11,6 @@ import java.util.Date;
 @Entity
 @Table(name = "MASTER_TANK")
 public class Tank extends BaseModel {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private Long Id;
-
     @Column(name = "TANK_NAME")
     private String tankName;
 
@@ -31,14 +26,6 @@ public class Tank extends BaseModel {
 
     @Column(name = "ACTIVE")
     private boolean active;
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
 
     public String getTankName() {
         return tankName;

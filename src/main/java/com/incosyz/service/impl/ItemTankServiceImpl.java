@@ -38,6 +38,7 @@ public class ItemTankServiceImpl implements ItemTankService {
     @Override
     public void save(ItemTankDTO itemTankDTO) {
         ItemTank itemTank = generateItemTankDto(itemTankDTO);
+        itemTank.setActive(true);
         if (itemTank != null) {
             abstractDao.save(itemTank);
         }
@@ -64,7 +65,6 @@ public class ItemTankServiceImpl implements ItemTankService {
 
         itemTank.setQty(itemTankDTO.getQty());
         itemTank.setUnitPrice(itemTankDTO.getUnitPrice());
-
         return itemTank;
     }
 

@@ -10,11 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "MASTER_BRAND")
 public class Brand extends BaseModel {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private Long Id;
-
     @Column(name = "BRAND_NAME")
     private String brandName;
 
@@ -27,14 +22,6 @@ public class Brand extends BaseModel {
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
     }
 
     public String getBrandName() {

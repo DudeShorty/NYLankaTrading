@@ -10,11 +10,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "ITEM_TANK")
 public class ItemTank extends BaseModel {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", nullable = false)
-    private Long Id;
-
     @ManyToOne
     @JoinColumn(name = "fk_TANK")
     private Tank tank;
@@ -31,14 +26,6 @@ public class ItemTank extends BaseModel {
 
     @Column(name = "ACTIVE")
     private boolean active;
-
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
 
     public Tank getTank() {
         return tank;
