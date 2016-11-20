@@ -2,20 +2,26 @@
  * Created by Aux-058 on 11/6/2016.
  */
 angular.module('RDash')
-    .controller('BrandCtrl', ['$scope', 'BrandService', function ($scope, BrandService) {
-
+    .controller('BrandCtrl', ['$scope', 'BrandService', 'AlertService', function ($scope, BrandService, AlertService) {
         console.log('BrandCtrl');
-        $scope.brandDTO = {
-            name: null,
-            active: true
-        };
+
+        $scope.refreshBrandDTO = refreshBrandDTO;
+        function refreshBrandDTO() {
+            $scope.brandDTO = {
+                name: null,
+                active: true
+            };
+        }
+        refreshBrandDTO();
 
         $scope.addBrand = addBrand;
         function addBrand() {
             console.log('AddBrand');
             BrandService.insert($scope.brandDTO)
                 .success(function () {
-                    alert('Success');
+                    readAll();
+                    refreshBrandDTO();
+                    AlertService.addSuccessAlert('Brand Saved Successfully.');
                 })
                 .error(function (error) {
                     console.error(error);
