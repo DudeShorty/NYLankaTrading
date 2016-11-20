@@ -61,7 +61,7 @@ function MasterCtrl($scope, $cookieStore, $http, $location) {
         // $http.post('logout', {}).finally(function() {
         $scope.authenticated = false;
         $location.path("/login");
-        $cookieStore.put('authenticated', false);
+        $cookieStore.remove('authenticated');
         // });
     }
 
