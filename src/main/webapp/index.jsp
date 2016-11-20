@@ -57,6 +57,9 @@
             <li class="sidebar-list">
                 <a href="#/model">Model <span class="menu-icon fa fa-table"></span></a>
             </li>
+            <li class="sidebar-list">
+                <a href="#/login">Login <span class="menu-icon fa fa-table"></span></a>
+            </li>
         </ul>
         <%--<div class="sidebar-footer">--%>
         <%--<div class="col-xs-4">--%>

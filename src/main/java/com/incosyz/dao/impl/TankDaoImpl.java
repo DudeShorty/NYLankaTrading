@@ -19,7 +19,7 @@ import java.util.List;
  */
 @Repository
 public class TankDaoImpl implements TankDao {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ItemDaoImpl.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(TankDaoImpl.class.getName());
 
     @Autowired
     private SessionFactory sessionFactory;

@@ -38,6 +38,10 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
                 url: '/item-category',
                 templateUrl: 'templates/ui/itemCategory.html'
             })
+            .state('itemCategory', {
+                url: '/login',
+                templateUrl: 'templates/secure/login.html'
+            })
             .state('model', {
                 url: '/model',
                 templateUrl: 'templates/master/model.html'
