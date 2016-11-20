@@ -10,10 +10,9 @@ angular.module('RDash')
             },
             search : function () {
 
+            },
+            readAll: function () {
+                return $http.get(baseURL + '/get');
             }
-            // ,
-            // readAll: function () {
-            //     return $http.get(baseURL + '/readAll');
-            // }
         };
     }]);
