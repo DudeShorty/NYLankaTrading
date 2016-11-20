@@ -19,12 +19,17 @@
             font-family: Calibri;
         }
     </style>
+    <script type="text/javascript">
+        window.onbeforeunload = function () {
+            return "You will be logout !";
+        }
+    </script>
 </head>
 <body ng-app="RDash" ng-controller="MasterCtrl as masterctrl">
 <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" ng-show="authenticated">
         <ul class="sidebar">
             <li class="sidebar-main">
                 <a ng-click="toggleSidebar()">
@@ -56,9 +61,6 @@
             </li>
             <li class="sidebar-list">
                 <a href="#/model">Model <span class="menu-icon fa fa-table"></span></a>
-            </li>
-            <li class="sidebar-list">
-                <a href="#/login">Login <span class="menu-icon fa fa-table"></span></a>
             </li>
         </ul>
         <%--<div class="sidebar-footer">--%>
@@ -113,7 +115,7 @@
                                     </a>
                                 </li>
                                 <li class="divider"></li>
-                                <li class="link">
+                                <li class="link" ng-click="logout()">
                                     <a href="#">
                                         Logout
                                     </a>

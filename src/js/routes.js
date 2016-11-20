@@ -7,16 +7,12 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
 
         // For unmatched routes
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/login');
 
         $stateProvider
-            .state('index', {
-                url: '/',
-                templateUrl: 'templates/dashboard.html'
-            })
-            .state('tables', {
-                url: '/tables',
-                templateUrl: 'templates/tables.html'
+            .state('login', {
+                url: '/login',
+                templateUrl: 'templates/secure/login.html'
             })
             .state('itemTank', {
                 url: '/item-tank',
@@ -37,10 +33,6 @@ angular.module('RDash').config(['$stateProvider', '$urlRouterProvider',
             .state('itemCategory', {
                 url: '/item-category',
                 templateUrl: 'templates/ui/itemCategory.html'
-            })
-            .state('itemCategory', {
-                url: '/login',
-                templateUrl: 'templates/secure/login.html'
             })
             .state('model', {
                 url: '/model',
