@@ -26,10 +26,10 @@
     </script>
 </head>
 <body ng-app="RDash" ng-controller="MasterCtrl as masterctrl">
-<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+<div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-if="authenticated">
 
     <!-- Sidebar -->
-    <div id="sidebar-wrapper" ng-show="authenticated">
+    <div id="sidebar-wrapper">
         <ul class="sidebar">
             <li class="sidebar-main">
                 <a ng-click="toggleSidebar()">
@@ -155,5 +155,6 @@
         </div><!-- End Page Content -->
     </div><!-- End Content Wrapper -->
 </div><!-- End Page Wrapper -->
+<div ui-view ng-if="!authenticated"></div>
 </body>
 </html>
