@@ -1,4 +1,10 @@
 <div class="body-div" ng-controller="BrandCtrl as brandctrl">
+    <div class="row alerts-container" data-ng-controller="AlertsCtrl" data-ng-show="alerts.length">
+        <div class="col-xs-12">
+            <uib-alert data-ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}
+            </uib-alert>
+        </div>
+    </div>
     <div class="body-inner-div">
         <table>
             <tr>
@@ -27,7 +33,7 @@
                             <th>
                                 Name
                             </th>
-                            <th>
+                            <th class="text-right">
                                 Action
                             </th>
                         </tr>

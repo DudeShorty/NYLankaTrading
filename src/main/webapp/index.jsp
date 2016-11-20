@@ -19,11 +19,6 @@
             font-family: Calibri;
         }
     </style>
-    <script type="text/javascript">
-        window.onbeforeunload = function () {
-            return "You will be logout !";
-        }
-    </script>
 </head>
 <body ng-app="RDash" ng-controller="MasterCtrl as masterctrl">
 <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak ng-if="authenticated">

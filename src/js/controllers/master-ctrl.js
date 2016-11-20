@@ -11,9 +11,11 @@ function MasterCtrl($scope, $cookieStore, $http, $location) {
         // $http.get('user', {headers: headers}).then(function (response) {
         if (credentials.username == 'admin' && credentials.password == '123') {
             $scope.authenticated = true;
+            $cookieStore.put('authenticated', true);
         } else {
             $location.path("/login");
             $scope.authenticated = false;
+            $cookieStore.put('authenticated', false);
         }
         $scope.credentials = {
             "username": null,
@@ -34,15 +36,22 @@ function MasterCtrl($scope, $cookieStore, $http, $location) {
 
     $scope.login = login;
     function login() {
-        authenticate($scope.credentials, function () {
-            if ($scope.authenticated) {
-                $location.path("/item-category");
-                $scope.error = false;
-            } else {
-                $location.path("/login");
-                $scope.error = true;
-            }
-        });
+        $scope.authenticated = $cookieStore.get('authenticated');
+        if ($scope.authenticated) {
+            $scope.error = false;
+            $scope.authenticated = true;
+            $cookieStore.put('authenticated', true);
+        } else {
+            authenticate($scope.credentials, function () {
+                if ($scope.authenticated) {
+                    $location.path("/item-category");
+                    $scope.error = false;
+                } else {
+                    $location.path("/login");
+                    $scope.error = true;
+                }
+            });
+        }
     }
 
     login();
@@ -52,6 +61,7 @@ function MasterCtrl($scope, $cookieStore, $http, $location) {
         // $http.post('logout', {}).finally(function() {
         $scope.authenticated = false;
         $location.path("/login");
+        $cookieStore.put('authenticated', false);
         // });
     }
 
