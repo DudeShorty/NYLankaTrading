@@ -12,6 +12,7 @@ angular.module('RDash')
                 active: true
             };
         }
+
         refreshBrandDTO();
 
         $scope.addBrand = addBrand;
@@ -38,5 +39,17 @@ angular.module('RDash')
                     console.error(error);
                 });
         }
+
+        $scope.deactivate = deactivate;
+        function deactivate(b) {
+            BrandService.deactivate(b)
+                .success(function (data) {
+
+                })
+                .error(function (error) {
+
+                });
+        }
+
         readAll();
     }]);

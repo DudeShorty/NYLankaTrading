@@ -1,16 +1,12 @@
 package com.incosyz.controller;
 
 import com.incosyz.dto.BrandDTO;
-import com.incosyz.dto.ItemDTO;
 import com.incosyz.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +30,11 @@ public class BrandController {
     public ResponseEntity<List<BrandDTO>> getAll() {
         List<BrandDTO> allBrands = brandService.getAllBrands();
         return new ResponseEntity<List<BrandDTO>>(allBrands, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/deactivate/{brandId}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Long> deactivate(@PathVariable("brandId") Long id) {
+        return new ResponseEntity<Long>(id, HttpStatus.OK);
     }
 }

@@ -14,9 +14,10 @@
                 <td>
                     <input class="text-box" ng-model="brandDTO.name" />
                 </td>
-                <td>
-                    <input type="button" value="ADD" class="btn-box" ng-click="addBrand()" />
-                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="button" value="ADD" class="btn-box" ng-click="addBrand()" /></td>
             </tr>
         </table>
     </div>
@@ -42,7 +43,9 @@
                     <tr ng-repeat="brand in brands">
                         <td>{{brand.name}}</td>
                         <td>
-                            <input type="button" value="DEACTIVATE" class="btn-box btn-red">
+
+                            <input type="button" ng-click="deactivate(brand.id)" ng-class="{'btn-red' : brand.active}"
+                                   value="{{brand.active ? 'DEACTIVATE' : 'ACTIVATE'}}" class="btn-box">
                         </td>
                     </tr>
                     </tbody>
