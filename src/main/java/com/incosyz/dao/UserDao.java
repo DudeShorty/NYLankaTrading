@@ -12,4 +12,6 @@ public interface UserDao {
     public User findByUserName(String username);
 
     public List<UserRole> findRoleByUserName(String username);
+
+    void save(User user);
 }

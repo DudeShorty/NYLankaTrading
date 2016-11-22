@@ -33,13 +33,13 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User findByUserName(String username) {
         Session em = getSession();
-        User user = new User();
+        User user = null;
         try {
-            Query query = em.createQuery("SELECT o FROM User o WHERE o.username = :username ");
+            Query query = em.createQuery("SELECT o FROM User o WHERE o.username = :username");
             query.setParameter("username", username);
-            user = (User) query.list();
+            user = (User) query.uniqueResult();
         } catch (NoResultException e) {
-
+            e.printStackTrace();
         }
         return user;
     }
@@ -49,12 +49,17 @@ public class UserDaoImpl implements UserDao {
         List<UserRole> userRoles = new ArrayList<>();
         Session em = getSession();
         try {
-            Query query = em.createQuery("SELECT o.userRole FROM UserRoleDetails o WHERE o.user.username = :username ");
+            Query query = em.createQuery("SELECT o.userRole FROM UserRoleDetails o WHERE o.user.username = :username");
             query.setParameter("username", username);
             userRoles = (List<UserRole>) query.list();
         } catch (NoResultException e) {
 
         }
         return userRoles;
+    }
+
+    @Override
+    public void save(User user) {
+        getSession().saveOrUpdate(user);
     }
 }

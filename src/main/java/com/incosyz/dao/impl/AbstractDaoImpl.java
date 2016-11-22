@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class AbstractDaoImpl implements AbstractDao {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ItemDaoImpl.class.getName());
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDaoImpl.class.getName());
 
     @Autowired
     private SessionFactory sessionFactory;
