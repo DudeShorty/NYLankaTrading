@@ -27,6 +27,13 @@ public class TankDTO implements Serializable {
     @JsonProperty("status")
     private String status;
 
+    @JsonProperty("created_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "IST")
+    private Date createdDate;
+
+    @JsonProperty("username")
+    private String username;
+
     public TankDTO() {
     }
 
@@ -80,5 +87,21 @@ public class TankDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

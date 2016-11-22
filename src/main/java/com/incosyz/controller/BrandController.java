@@ -35,6 +35,7 @@ public class BrandController {
     @RequestMapping(value = "/deactivate/{brandId}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Long> deactivate(@PathVariable("brandId") Long id) {
+        boolean status = brandService.activeDeactive(id);
         return new ResponseEntity<Long>(id, HttpStatus.OK);
     }
 }

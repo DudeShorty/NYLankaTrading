@@ -1,5 +1,6 @@
 package com.incosyz.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.io.Serializable;
@@ -20,7 +21,11 @@ public class BrandDTO  implements Serializable {
     private Boolean active;
 
     @JsonProperty("created_date")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd hh:mm:ss", timezone = "IST")
     private Date createdDate;
+
+    @JsonProperty("username")
+    private String username;
 
     public BrandDTO() {
     }
@@ -62,5 +67,13 @@ public class BrandDTO  implements Serializable {
 
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

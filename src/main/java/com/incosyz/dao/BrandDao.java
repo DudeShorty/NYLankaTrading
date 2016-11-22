@@ -10,4 +10,8 @@ import java.util.List;
 public interface BrandDao {
     List<Brand> getAllBrands();
     List<Brand> getAllBrandsActive();
+
+    Brand getBrand(Long id);
+
+    void updateActive(Brand brand);
 }

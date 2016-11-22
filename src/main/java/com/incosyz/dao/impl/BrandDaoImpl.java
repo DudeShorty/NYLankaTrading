@@ -47,4 +47,30 @@ public class BrandDaoImpl implements BrandDao {
         }
         return new ArrayList<>();
     }
+
+    @Override
+    public Brand getBrand(Long id) {
+        Session session = getSession();
+        Query query = session.createQuery("SELECT b from Brand b WHERE b.id = :id");
+        query.setParameter("id", id);
+        try {
+            return (Brand) query.uniqueResult();
+        } catch (Exception ex) {
+
+        }
+        return null;
+    }
+
+    @Override
+    public void updateActive(Brand brand) {
+        Session session = getSession();
+        Query query = session.createQuery("UPDATE Brand b SET b.active = :active WHERE b.id = :id ");
+        query.setParameter("id", brand.getId());
+        query.setParameter("active", brand.isActive());
+        try {
+            query.executeUpdate();
+        } catch (Exception ex) {
+
+        }
+    }
 }

@@ -5,12 +5,14 @@ import com.incosyz.dao.TankDao;
 import com.incosyz.dto.MethodResult;
 import com.incosyz.dto.TankDTO;
 import com.incosyz.entity.Tank;
+import com.incosyz.entity.User;
 import com.incosyz.service.TankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -47,7 +49,7 @@ public class TankServiceImpl implements TankService {
             Tank tank = new Tank();
             tank.setIdentifyNumber(tankDTO.getIdentifyNumber());
             tank.setReceivedDate(tankDTO.getReceivedDate());
-            if(!StringUtils.isEmpty(tankDTO.getStatus())) {
+            if (!StringUtils.isEmpty(tankDTO.getStatus())) {
                 tank.setStatus(tankDTO.getStatus());
             }
             tank.setTankName(tankDTO.getName());
@@ -66,6 +68,11 @@ public class TankServiceImpl implements TankService {
             tankDTO.setReceivedDate(tank.getReceivedDate());
             tankDTO.setStatus(tank.getStatus());
             tankDTO.setId(tank.getId());
+            User user = tank.getCreatedUser();
+            if (user != null) {
+                tankDTO.setUsername(user.getUsername());
+            }
+            tankDTO.setCreatedDate(tank.getCreatedDate());
             tankDTOs.add(tankDTO);
         }
         return tankDTOs;

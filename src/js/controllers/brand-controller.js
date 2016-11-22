@@ -41,13 +41,13 @@ angular.module('RDash')
         }
 
         $scope.deactivate = deactivate;
-        function deactivate(b) {
-            BrandService.deactivate(b)
+        function deactivate(id) {
+            BrandService.deactivate(id)
                 .success(function (data) {
-
+                    readAll();
                 })
                 .error(function (error) {
-
+                    console.error(error);
                 });
         }
 

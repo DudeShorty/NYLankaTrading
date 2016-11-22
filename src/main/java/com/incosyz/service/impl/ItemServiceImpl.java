@@ -4,6 +4,7 @@ import com.incosyz.dao.AbstractDao;
 import com.incosyz.dao.ItemDao;
 import com.incosyz.dto.ItemDTO;
 import com.incosyz.entity.Item;
+import com.incosyz.entity.User;
 import com.incosyz.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,6 +59,12 @@ public class ItemServiceImpl implements ItemService {
             if (!StringUtils.isEmpty(item.getItemName())) {
                 itemDTO.setName(item.getItemName());
             }
+            User createdUser = item.getCreatedUser();
+            if (createdUser != null) {
+                String username = createdUser.getUsername();
+                itemDTO.setUsername(username);
+            }
+            itemDTO.setCreatedDate(item.getCreatedDate());
             itemDTOs.add(itemDTO);
         }
         return itemDTOs;

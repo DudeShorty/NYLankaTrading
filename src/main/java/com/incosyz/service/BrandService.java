@@ -11,4 +11,6 @@ public interface BrandService {
     void add(BrandDTO brandDTO);
 
     List<BrandDTO> getAllBrands();
+
+    boolean activeDeactive(Long id);
 }

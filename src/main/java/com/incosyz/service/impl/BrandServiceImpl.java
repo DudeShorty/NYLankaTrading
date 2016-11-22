@@ -4,6 +4,7 @@ import com.incosyz.dao.AbstractDao;
 import com.incosyz.dao.BrandDao;
 import com.incosyz.dto.BrandDTO;
 import com.incosyz.entity.Brand;
+import com.incosyz.entity.User;
 import com.incosyz.service.BrandService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -43,6 +44,20 @@ public class BrandServiceImpl implements BrandService {
         return brandDTOs;
     }
 
+    @Override
+    public boolean activeDeactive(Long id) {
+        Brand brand = brandDao.getBrand(id);
+        if (brand != null) {
+            if (brand.isActive()) {
+                brand.setActive(false);
+            } else {
+                brand.setActive(true);
+            }
+        }
+        brandDao.updateActive(brand);
+        return false;
+    }
+
     private List<BrandDTO> generateBrandDTOs(List<Brand> brandList) {
         if (brandList == null || brandList.size() == 0) {
             return new ArrayList<>();
@@ -59,6 +74,11 @@ public class BrandServiceImpl implements BrandService {
                 brandDTO.setCreatedDate(brand.getCreatedDate());
             }
             brandDTOs.add(brandDTO);
+
+            User createdUser = brand.getCreatedUser();
+            if (createdUser != null) {
+                brandDTO.setUsername(createdUser.getUsername());
+            }
         }
         return brandDTOs;
     }

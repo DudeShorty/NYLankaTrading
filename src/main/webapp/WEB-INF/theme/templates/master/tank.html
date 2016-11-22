@@ -53,14 +53,20 @@
                 <h3 class="text-center">No Data</h3>
             </div>
             <div class="table-responsive" ng-if="tanks.length != 0">
-                <table class="table table-striped">
+                <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
                         <th>Name</th>
                         <th>Identify Number</th>
                         <th>Received Date</th>
                         <th>Status</th>
-                        <th class="text-right">Action</th>
+                        <th style="width: 200px">
+                            Created Date
+                        </th>
+                        <th style="width: 100px">
+                            Created User
+                        </th>
+                        <th class="text-right" style="width: 100px">Action</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -69,6 +75,8 @@
                         <td>{{tank.identify_number}}</td>
                         <td>{{tank.received_date}}</td>
                         <td>{{tank.status}}</td>
+                        <td>{{tank.created_date}}</td>
+                        <td>{{tank.username}}</td>
                         <td>
                             <input type="button" value="DEACTIVATE" class="btn-box btn-red">
                         </td>
